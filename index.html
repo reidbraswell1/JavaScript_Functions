@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>If/While/For Exercises</title>
+</head>
+
+<body>
+  <main style="display: flex; justify-content: center; align-items: center; text-align: center;">
+    <div>
+      <h1>Java Script Functions</h1>
+      <p>
+        Open the Browser Console to view your work (Right-Click => Inspect or
+        fn+F12)
+      </p>
+      <!-- Form Output -->
+      <form id="form" method="POST" action="javascript:controller(this);">
+        <h4>Exercise Entry Form</h4>
+        <label for="count">Number of times to loop: </label>
+        <input type="number" name="count" id="count" min="1" max="100">
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" name="userName">
+        <label for="age">Enter age:</label>
+        <input type="number" name="age" id="age" min="1" max="100">
+        <br>
+        <input type="submit" value="Submit" onsubmit="return true;">
+      </form>
+      <!-- Exercise Output -->
+      <h4>Exercise 1 - Ignore Even - Output</h4>
+      <p id=exercise-1>
+      </p>
+      <h4>Exercise 2 - checkAge Output</h4>
+      <p id=exercise-2>
+      </p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
