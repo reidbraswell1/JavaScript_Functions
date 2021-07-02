@@ -13,15 +13,32 @@ let controller = function(obj) {
 // Exercise 1 Section
 // Assign a defalt value if count not defined
 function printOdds(count=0) {
+    const errorColor = "red";
+    const standardColor = "black";
+    const outputElementId = "exercise-1";
+
     console.log("EXERCISE 1:\n==========\n");
-    document.getElementById("exercise-1").innerText="";
+    document.getElementById(outputElementId).style.color=standardColor;
+    document.getElementById(outputElementId).innerText="";
+    if(count < 0) {
+        console.log(`Count is negative ${count}`);
+        document.getElementById(outputElementId).style.color=errorColor;
+        document.getElementById(outputElementId).innerText=`Count is negative ${count}`;
+        return;
+    }
+    if(count == 0) {
+        console.log(`Count is zero - ${count}`);
+        document.getElementById(outputElementId).style.color=errorColor;
+        document.getElementById(outputElementId).innerText=`Count is zero - ${count}`;
+        return;
+    }
     for(let i=0; i <= count; i++) {
         if(i % 2 !=0) {
             console.log(`ODD - ${i}`);
-            let text = document.createTextNode(i);
+            let text = document.createTextNode(`ODD - ${i}`);
             let br = document.createElement("br");
-            document.getElementById("exercise-1").appendChild(text);
-            document.getElementById("exercise-1").appendChild(br);
+            document.getElementById(outputElementId).appendChild(text);
+            document.getElementById(outputElementId).appendChild(br);
         }
     }
 }
@@ -29,6 +46,8 @@ function printOdds(count=0) {
 // Exercise 2 Section
 // Assign a defalut value if userName or age not defined
 function checkAge(userName, ageP=0) {
+    const outputElementId = "exercise-2";
+
     console.log("EXERCISE 2:\n==========\n");
     if(userName == "") {
         userName = "Anonymous User";
@@ -38,10 +57,10 @@ function checkAge(userName, ageP=0) {
     const minAge = 16;
     if(ageP < minAge) {
         console.log(belowSixteen);
-        document.getElementById("exercise-2").innerText = belowSixteen;
+        document.getElementById(outputElementId).innerText = belowSixteen;
     }
     else {
         console.log(aboveSixteen);
-        document.getElementById("exercise-2").innerText = aboveSixteen;
+        document.getElementById(outputElementId).innerText = aboveSixteen;
     }
 }
